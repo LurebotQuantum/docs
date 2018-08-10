@@ -2,10 +2,10 @@
 
     .-----------------------.
     |.-----------.          |
-    || Core -----|- Adapter | wrapper     Entity    := message part(s) e.g."[TEXT, IMG]"
-    ||  |        |       |  |             Scripting :: Entity -> Entity
-    '|--|--------|=======|=='             Core      :: Entity -(Scripting)-> Entity
-     |  |        |       |                Adapter   :: a -(Core)-> a
+    || Core -----|- Adapter | wrapper     Message   :: (Meta, Entity)
+    ||  |        |       |  |             Entity    := message part(s) e.g."[TEXT, IMG]"
+    '|--|--------|=======|=='             Scripting :: [(Pattern, Task)]
+     |  |        |       |                Adapter   :: a -> (Core) | (Core) -> a
      | Scripting |  IM (telegram, etc.)                where "a" is IM specific message
      '==========='
         quantum
